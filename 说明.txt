@@ -1,0 +1,8 @@
+ClipherDongFangMeiBao.class文件是经AES加密后的class文件，无法反编译
+用Eclipse将该项目打包成jar
+在代码中，
+1.首页，获取jar中的ClipherDongFangMeiBao.class的输入流
+2.将该流转换成ByteArrayOutputStream，需要得到该文件数组
+3.得到了加密后的字节数组，再解密，得到解密后的字节数组，即为class的真正字节
+4.再通过ClassLoader将解密后的字节数组，加载进来，即完成加载class文件,得到Class
+5.可通过Class得到对象的实例，再通过反射或接口，调用实例方法
